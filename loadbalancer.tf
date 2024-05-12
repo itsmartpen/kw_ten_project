@@ -1,6 +1,6 @@
 # Create a security group for ALB
 resource "aws_security_group" "alb_sg" {
-  name        = "alb-security-group"
+  name        = "alb-security-grp"
   description = "Application load balancer security group"
   vpc_id      = aws_vpc.this.id
 
