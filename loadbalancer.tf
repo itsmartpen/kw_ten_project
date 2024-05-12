@@ -1,5 +1,5 @@
 # Create a security group for ALB
-resource "aws_security_group" "alb_sg" {
+resource "aws_security_group" "alb_idris" {
   name        = "alb-security-grp"
   description = "Application load balancer security group"
   vpc_id      = aws_vpc.this.id
@@ -18,7 +18,7 @@ resource "aws_security_group" "alb_sg" {
   }
 
   tags = {
-    Name = "alb-security-group"
+    Name = "alb-security-grp"
   }
 }
 
