@@ -1,5 +1,5 @@
 # Create a security group for ALB
-resource "aws_security_group" "alb_idris" {
+resource "aws_security_group" "alb_idr" {
   name        = "alb-security-group"
   description = "Application load balancer security group"
   vpc_id      = aws_vpc.this.id
@@ -67,7 +67,7 @@ resource "aws_lb" "application-lb" {
   name               = "application-lb"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [aws_security_group.alb_idris.id]
+  security_groups    = [aws_security_group.alb_idr.id]
   subnets            = [for subnet in aws_subnet.private : subnet.id]
 
   enable_deletion_protection = false
