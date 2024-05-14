@@ -1,20 +1,25 @@
-pipeline {
+ppipeline{
     agent any
-    stages {
-        stage('Hello') {
-            steps {
-                echo 'init'
+
+    stages{
+        stage('init'){
+            steps{
+                sh 'terraform init -no-color'
             }
         }
-        
         stage('validate'){
             steps{
-                echo "validate"
+                sh 'terraform validate -no-color'
             }
         }
-        stage('fmt'){
+        stage('format'){
             steps{
-                echo "fmt"
+                sh 'terraform fmt -no-color'
+            }
+        }
+        stage('plan'){
+            steps{
+                sh 'terraform plan -no-color'
             }
         }
     }
