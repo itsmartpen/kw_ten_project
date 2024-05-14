@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'init'
+            }
+        }
+        
+        stage('validate'){
+            steps{
+                echo "validate"
+            }
+        }
+        stage('fmt'){
+            steps{
+                echo "fmt"
+            }
+        }
+    }
+}
